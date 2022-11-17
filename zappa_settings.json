@@ -1,0 +1,21 @@
+{
+  "dev": {
+    "app_function": "run.app",
+    "aws_region": "ap-northeast-1",
+    "profile_name": "AppDevZappaCLI",
+    "project_name": "app-flask-cicd-test",
+    "runtime": "python3.9",
+    "s3_bucket": "app-zappa-560333535967",
+    "endpoint_configuration": ["REGIONAL"],
+    "role_name": "app-KeyEstimationLambdaRole",
+
+    "manage_roles": false,
+    "keep_warm": false,
+
+    "lambda_description": "CI/CDテスト",
+    "apigateway_description": "CI/CDテスト",
+
+    "cloudwatch_log_level": "INFO",
+    "cors": true
+  }
+}
