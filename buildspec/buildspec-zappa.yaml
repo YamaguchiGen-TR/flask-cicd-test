@@ -5,6 +5,12 @@ phases:
       python: 3.9
   pre_build:
     commands:
+      # グローバル(ルート)Python環境
+      # pip を最新にする
+      - python -m pip install --upgrade pip
+      # Python仮想環境
+      - python -m venv venv
+      - . .venv/bin/activate
       - pip install -r requirements.txt
   build:
     commands:
