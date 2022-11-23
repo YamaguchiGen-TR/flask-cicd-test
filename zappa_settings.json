@@ -2,7 +2,6 @@
   "dev": {
     "app_function": "run.app",
     "aws_region": "ap-northeast-1",
-    "profile_name": "AppDevZappaCLI",
     "project_name": "app-flask-cicd-test",
     "runtime": "python3.9",
     "s3_bucket": "app-zappa-560333535967",
