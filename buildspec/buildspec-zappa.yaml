@@ -8,4 +8,5 @@ phases:
       - pip install -r requirements.txt
   build:
     commands:
+      - echo ZAPPA_DEPLOY_CLI = $ZAPPA_DEPLOY_CLI
       - $ZAPPA_DEPLOY_CLI
