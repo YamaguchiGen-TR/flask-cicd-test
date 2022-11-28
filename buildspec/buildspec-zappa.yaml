@@ -18,5 +18,20 @@ phases:
       - python -V
   build:
     commands:
-      - echo ZAPPA_DEPLOY_CLI = $ZAPPA_DEPLOY_CLI
-      - $ZAPPA_DEPLOY_CLI
+      # https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-awscli.html#with-userapp-walkthrough-custom-events-list-functions
+      # https://jmespath.org/specification.html#equality-operators
+      - functionName = aws lambda list-functions 
+          --region ap-northeast-1
+          --query 'Functions[?FunctionName==`app-flask-cicd-test-dev`].FunctionName'
+          --output text
+      # https://dev.classmethod.jp/articles/multiple-line-command-and-conditional-statements-on-codebuild-buildspec-yml/
+      # https://qiita.com/egawa_kun/items/196cd354c0d8e4e0fefc
+      - |
+        if [ $functionName = "app-flask-cicd-test-dev" ]; then
+          zappa update dev
+        else
+          zappa deploy dev
+        fi
+
+#      - echo ZAPPA_DEPLOY_CLI = $ZAPPA_DEPLOY_CLI
+#      - $ZAPPA_DEPLOY_CLI
