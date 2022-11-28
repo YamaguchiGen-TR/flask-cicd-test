@@ -21,10 +21,11 @@ phases:
       - QUERY='Functions[?FunctionName==`app-flask-cicd-test-dev`].FunctionName' # 「=」の両脇に半角スペースは入れないこと
       # https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-awscli.html#with-userapp-walkthrough-custom-events-list-functions
       # https://jmespath.org/specification.html#equality-operators
-      - functionName=`aws lambda list-functions # 「=」の両脇に半角スペースは入れないこと
-          --region ap-northeast-1
-          --query $QUERY
-          --output text`
+      # 「=」の両脇に半角スペースは入れないこと
+      - functionName=`aws lambda list-functions
+        --region ap-northeast-1
+        --query $QUERY
+        --output text`
       # https://dev.classmethod.jp/articles/multiple-line-command-and-conditional-statements-on-codebuild-buildspec-yml/
       # https://qiita.com/egawa_kun/items/196cd354c0d8e4e0fefc
       - |
