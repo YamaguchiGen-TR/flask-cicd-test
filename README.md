@@ -1,3 +1,5 @@
+![](https://codebuild.ap-northeast-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiYUJIaTJ3UXRRMU0xOFpQVnpaVUhqK3U5UkdvdGdUd0ZNUm1FR2NleWdjcjU0UXFLSjJMSzhkZ3JNMnVOQmVYN0NPTlF0VmhXQ3RKU1ZTa3Y2UzRLSjRVPSIsIml2UGFyYW1ldGVyU3BlYyI6InZ0RXhMR2E0dGwrYWJ3VmsiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
+
 # Flask サンプルアプリケーション
 
 ---
