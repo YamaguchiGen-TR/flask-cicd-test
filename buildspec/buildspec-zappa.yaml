@@ -23,7 +23,7 @@ phases:
       # https://jmespath.org/specification.html#equality-operators
       - functionName = `aws lambda list-functions
           --region ap-northeast-1
-          --query 'Functions[?FunctionName==`app-flask-cicd-test-dev`].FunctionName'
+          --query 'Functions[?FunctionName==\`app-flask-cicd-test-dev\`].FunctionName'
           --output text`
       # https://dev.classmethod.jp/articles/multiple-line-command-and-conditional-statements-on-codebuild-buildspec-yml/
       # https://qiita.com/egawa_kun/items/196cd354c0d8e4e0fefc
