@@ -18,7 +18,7 @@ phases:
       - python -V
   build:
     commands:
-      aws lambda list-functions 
+      - aws lambda list-functions
       # https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-awscli.html#with-userapp-walkthrough-custom-events-list-functions
       # https://jmespath.org/specification.html#equality-operators
       - functionName = $(aws lambda list-functions 
