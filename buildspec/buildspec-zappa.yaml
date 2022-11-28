@@ -18,21 +18,20 @@ phases:
       - python -V
   build:
     commands:
-      - QUERY='Functions[?FunctionName==`app-flask-cicd-test-dev`].FunctionName'
+      - QUERY='Functions[?FunctionName==`app-flask-cicd-test-dev`].FunctionName' # 「=」の両脇に半角スペースは入れないこと
       # https://docs.aws.amazon.com/ja_jp/lambda/latest/dg/gettingstarted-awscli.html#with-userapp-walkthrough-custom-events-list-functions
       # https://jmespath.org/specification.html#equality-operators
-      - functionName=`aws lambda list-functions
+      - functionName=`aws lambda list-functions # 「=」の両脇に半角スペースは入れないこと
           --region ap-northeast-1
-          --query Functions[?FunctionName==\`app-flask-cicd-test-dev\`].FunctionName
+          --query $QUERY
           --output text`
       # https://dev.classmethod.jp/articles/multiple-line-command-and-conditional-statements-on-codebuild-buildspec-yml/
       # https://qiita.com/egawa_kun/items/196cd354c0d8e4e0fefc
       - |
         if [ $functionName = "app-flask-cicd-test-dev" ]; then
+          echo 更新デプロイを行います
           zappa update dev
         else
+          echo 新規デプロイを行います
           zappa deploy dev
         fi
-
-#      - echo ZAPPA_DEPLOY_CLI = $ZAPPA_DEPLOY_CLI
-#      - $ZAPPA_DEPLOY_CLI
