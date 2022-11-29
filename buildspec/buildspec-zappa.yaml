@@ -28,6 +28,7 @@ phases:
         --output text`
       # https://dev.classmethod.jp/articles/multiple-line-command-and-conditional-statements-on-codebuild-buildspec-yml/
       # https://qiita.com/egawa_kun/items/196cd354c0d8e4e0fefc
+      # 新規デプロイなのか、更新のためのデプロイなのかを判断してコマンドを切り替える
       - |
         if [ "$functionName" = "app-flask-cicd-test-dev" ]; then
           echo 更新デプロイを行います
