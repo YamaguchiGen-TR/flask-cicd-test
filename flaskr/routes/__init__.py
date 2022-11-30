@@ -1,6 +1,6 @@
 from flask_restx import Api
 
-from flaskr.routes.test.route import api as test_api
+from flaskr.routes.simple.route import api as simple_api
 
 api = Api(
     version='1.0',
@@ -9,4 +9,4 @@ api = Api(
     doc='/',
 )
 
-api.add_namespace(test_api)
+api.add_namespace(simple_api)

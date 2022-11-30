@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+  pre_build:
+    commands:
+      # -----Python仮想環境 -----
+      # 仮想環境作成
+      - python -m venv venv
+      # 有効化
+      - . venv/bin/activate
+      # pip を最新にする
+      - pip install --upgrade pip
+      # パッケージインストール
+      - pip install -r requirements.txt
+      # Pythonバージョン確認
+      - python -V
+  build:
+    commands:
+      - pytest
+      - coverage run -m pytest
+      - coverage html
