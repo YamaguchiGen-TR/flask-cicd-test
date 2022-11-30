@@ -20,4 +20,10 @@ phases:
     commands:
       - pytest
       - coverage run -m pytest
-      - coverage html
+      - coverage xml -o reports/pytest/cobertura-coverage.xml
+
+reports:
+  pytest-report:
+    files:
+      - "reports/pytest/*.xml"
+    file-format: "COBERTURAXML"
