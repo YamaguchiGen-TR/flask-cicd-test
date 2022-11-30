@@ -13,7 +13,7 @@ phases:
       # pip を最新にする
       - pip install --upgrade pip
       # パッケージインストール
-      - pip install -r requirements.txt
+      - pip install flake8==5.0.4 flake8-quotes
       # Pythonバージョン確認
       - python -V
   build:
