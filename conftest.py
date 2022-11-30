@@ -1,4 +1,3 @@
-import os
 import pytest
 
 """ このコードは全test_***.py で使用されます"""
